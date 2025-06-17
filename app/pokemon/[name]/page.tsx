@@ -83,19 +83,24 @@ export default async function PokemonDetail({
       <main className="bg-slate-100 min-h-screen p-4 sm:p-8 flex flex-col items-center">
         {/* Card Principal */}
         <div className="bg-white rounded-2xl shadow-xl w-full max-w-2xl p-6 relative">
-          {/* Botão de Voltar */}
-          <Link
-            href="/"
-            className="absolute top-4 left-4 text-slate-500 hover:text-slate-800 transition-colors"
-          >
-            &larr; Voltar
-          </Link>
+          {/* CABEÇALHO DO CARD: Contém Voltar, ID e Tipos */}
+          <div className="flex justify-between items-center mb-6">
+            {/* LADO ESQUERDO: Agrupa o botão e o ID */}
+            <div className="flex items-center gap-4">
+              <Link
+                href="/"
+                className="text-slate-600 hover:text-slate-900 transition-colors font-medium flex items-center gap-2"
+              >
+                &larr;
+                <span className="hidden sm:inline">Voltar</span>{" "}
+                {/* O texto 'Voltar' some em telas pequenas */}
+              </Link>
+              <span className="font-bold text-xl text-slate-500">
+                N°{pokemon.id.toString().padStart(3, "0")}
+              </span>
+            </div>
 
-          {/* Informações de ID e Tipos */}
-          <div className="flex justify-between items-center mb-4">
-            <span className="text-xl font-bold text-slate-500">
-              N°{pokemon.id.toString().padStart(3, "0")}
-            </span>
+            {/* LADO DIREITO: Tipos */}
             <div className="flex gap-2">
               {pokemon.types.map((typeInfo) => (
                 <span
