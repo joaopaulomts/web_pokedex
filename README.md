@@ -63,7 +63,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull r
 
 ## 📄 Licença
 
-Este projeto está sob a licença
+Este projeto está sob a
 
 ---
 
